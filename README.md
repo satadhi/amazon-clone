@@ -11,3 +11,9 @@
 npm install
 npm run start
 ```
+
+
+## Roadmap 
+
+1. The idea is to copy as many features of amazon.in as possible.
+2. Try integrating with aws services for stuff like login, and dbs etc.

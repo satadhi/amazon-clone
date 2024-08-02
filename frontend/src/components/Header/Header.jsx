@@ -11,7 +11,7 @@ function Header() {
           <AmazonMainLogo />
         </div>
         {/* search */}
-        <div className='w-[50%]'>
+        <div className='w-[70%]'>
          <Searchbar/>
         </div>
         {/* username/login */}
