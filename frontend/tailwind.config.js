@@ -16,6 +16,12 @@ module.exports = {
       scale: {
         '15': '0.15', // Add 20% scale
       },
+      maxWidth: {
+        homebody: '1500px'
+      },
+      zIndex: {
+        '-1' : -1
+      }
     },
   },
   plugins: [],
