@@ -26,6 +26,7 @@ npm run start
 - [ ] language support ?
 - [ ] For items add paginations 
 - [ ] Check out the new image format i.e; google image format that is cool
+- [ ] Checkout react-currency-format
 
 
 ### Home page
