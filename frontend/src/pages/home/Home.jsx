@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import bgImages from './bgImages';
-import HeroCard from '../ItemHeroCard/HeroCard';
+import HeroCard from '../../components/ItemHeroCard/HeroCard';
 import DynamicGrid from './DynamicGrid';
 import { getProductList } from '../../rest-api/getProductList';
 

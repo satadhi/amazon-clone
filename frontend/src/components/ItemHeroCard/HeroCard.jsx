@@ -16,9 +16,9 @@ function HeroCard({ data }) {
     // }
 
     return (
-        <div className="p-1">
-            <div className="shadow-lg p-4 rounded-lg bg-white">
-                <div className="flex flex-col justify-center items-center gap-2">
+        <div className="p-1 h-full">
+            <div className="h-full shadow-lg p-4 rounded-lg bg-white">
+                <div className="h-full flex flex-col justify-stretch items-center gap-2">
                     <div>
                         <h1 className="text-xl font-bold">{data.title}</h1>
                     </div>
