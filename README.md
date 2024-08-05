@@ -12,6 +12,39 @@ npm install
 npm run start
 ```
 
+## Folder structure
+
+```
+src/
+│
+├── components/
+│   ├── SomeComponent/
+│   │   ├── SomeComponent.jsx
+│   │   └── SomeComponent.module.css
+│   └── AnotherComponent/
+│       ├── AnotherComponent.jsx
+│       └── AnotherComponent.module.css
+│
+├── context/
+│   ├── MyContext.jsx
+│   └── AnotherContext.jsx
+│
+├── pages/
+│   ├── HomePage/
+│   │   ├── HomePage.jsx
+│   │   └── HomePage.module.css
+│   └── AboutPage/
+│       ├── AboutPage.jsx
+│       └── AboutPage.module.css
+│
+├── hooks/
+│   └── useCustomHook.js
+│
+├── App.jsx
+└── index.js
+
+
+```
 
 ## Backlog 
 
@@ -32,3 +65,5 @@ npm run start
 ### Home page
 - [ ] Shrink blank spaces to 0 then start shrinking the home materials
 - [ ] use this api to do all the stuff https://dummyjson.com/docs/products
+
+

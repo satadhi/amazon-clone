@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Item from './Item';
 import { useLocation } from 'react-router-dom';
 import { setCheckoutProductList, getCheckoutProductList } from '../../../handler/localstorage';
+import { CheckoutContext } from '../../../context/CheckoutPageContext';
 
 function LeftSide() {
 
@@ -9,10 +10,21 @@ function LeftSide() {
   // maybe we need api call to save the item that is added in the cart
   let itemList = getCheckoutProductList();
   let newItem = useLocation().state.addToBasket;
+  let { setTotalCost } = useContext(CheckoutContext)
 
-  // new items is added
+  // check if item already added then calculate total cost of for the items in the cart
   if (newItem && itemList.length) {
-    let isPresent = itemList.find(ele => ele.id == newItem.id)
+    let isPresent = false;
+    let calcTotalCost = 0;
+    for (let ele of itemList) {
+      calcTotalCost += ele.price;
+      if (ele.id == newItem.id) {
+        isPresent = true;
+      }
+    }
+
+    // set the value of the total Cost for the right side panel
+    setTotalCost(calcTotalCost)
 
     if (!isPresent) {
       setCheckoutProductList(newItem);
