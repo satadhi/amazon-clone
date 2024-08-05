@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Item() {
+function Item({ data }) {
+  
   return (
     <div className="border-b border-gray-300 py-4">
       <div className="flex gap-6 items-start">
@@ -15,17 +16,18 @@ function Item() {
 
         {/* Item picture */}
         <div className="flex-none h-32 w-32">
-          <div className="h-full w-full bg-blue-500 rounded-md"></div>
+          {/* <div className="h-full w-full bg-blue-500 rounded-md"></div> */}
+          <img className="h-full w-full object-contain" src={data.image} />
         </div>
 
         {/* Item info */}
-        <div className="flex-grow h-full">
-          <div className="flex flex-col justify-between h-full space-y-3">
+        <div className="flex-grow h-full w-[80%]">
+          <div className="flex flex-col justify-between w-full h-full space-y-3">
             {/* Title */}
-            <div className="text-sm font-medium text-gray-800">
-              Minimalist Gentle Face Wash With 6% Oat Extract & Hyaluronic Acid For Sensitive Skin (Dry to Normal) | Sulphate Free | Non-Drying | Fragrance Free | Gentle Cleanser (120 ML)
+            <div className="text-sm font-bold text-gray-800 w-full">
+              {data.title}
             </div>
-            
+
             {/* Quantity and Delete */}
             <div className="flex gap-6 items-center">
               <div className="flex gap-2 items-center">
@@ -51,7 +53,7 @@ function Item() {
 
         {/* Price show */}
         <div className="flex-none text-lg font-semibold text-gray-800">
-          Rs. 1,999
+          Rs. {data.price}
         </div>
       </div>
     </div>

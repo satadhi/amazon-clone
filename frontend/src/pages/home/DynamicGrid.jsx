@@ -26,16 +26,6 @@ const DynamicGrid = ({ items }) => {
 
 // Example usage
 const App = ({ listOfListOfItems }) => {
-
-    // console.log('dynamic grid')
-    // console.log(listOfListOfItems)
-    // const items = [
-    //     ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 20'],
-    //     ['Item 5', 'Item 6'],
-    //     ['Item 7', 'Item 8', 'Item 9', 'Item 10'],
-    //     ['Item 11', 'Item 12'],
-    // ];
-
     return (
         <div>
             <DynamicGrid items={listOfListOfItems} />

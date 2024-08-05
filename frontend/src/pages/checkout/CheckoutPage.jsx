@@ -1,8 +1,11 @@
 import React from 'react';
 import LeftSide from './component/LeftSide';
 import Rightside from './component/Rightside';
+import { useLocation } from 'react-router-dom';
 
 function CheckoutPage() {
+    // let location = useLocation().state || {};
+    // console.log("location location", location)
     return (
         <div>
             <div className="flex justify-center">
