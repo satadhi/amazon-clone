@@ -13,7 +13,7 @@ function Home() {
     // Fake API call to bg images
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log(bgImageNo)
+            // console.log(bgImageNo)
             setBgImageNo((prev) => (prev + 1) % bgImages.length)
         }, 4000);
 

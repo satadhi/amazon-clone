@@ -10,7 +10,7 @@ function LeftSide() {
   const dispatch = useDispatch();
   // maybe we need api call to save the item that is added in the cart
   let itemList = getCheckoutProductList();
-  let newItem = useLocation().state.addToBasket;
+  let newItem = useLocation().state?.addToBasket;
   let { setTotalCost } = useContext(CheckoutContext)
 
   // check if item already added then calculate total cost of for the items in the cart
