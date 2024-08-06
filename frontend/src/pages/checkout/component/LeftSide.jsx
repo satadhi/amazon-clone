@@ -3,10 +3,11 @@ import Item from './Item';
 import { useLocation } from 'react-router-dom';
 import { setCheckoutProductList, getCheckoutProductList } from '../../../handler/localstorage';
 import { CheckoutContext } from '../../../context/CheckoutPageContext';
-
+import { useDispatch } from 'react-redux';
+import { updateItemCount } from '../../../redux/reducers/cartItem/cartItemReducer'
 function LeftSide() {
 
-
+  const dispatch = useDispatch();
   // maybe we need api call to save the item that is added in the cart
   let itemList = getCheckoutProductList();
   let newItem = useLocation().state.addToBasket;
@@ -37,6 +38,7 @@ function LeftSide() {
     setCheckoutProductList(newItem);
   }
 
+  dispatch(updateItemCount(itemList.length || 0))
   console.log('get the left side of', itemList)
 
   return (
