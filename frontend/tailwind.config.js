@@ -19,6 +19,9 @@ module.exports = {
       maxWidth: {
         homebody: '1500px'
       },
+      width: {
+        checkoutMain: '1500px'
+      },
       zIndex: {
         '-1' : -1
       }

@@ -8,7 +8,7 @@ function CheckoutPage() {
         <div>
             <CheckoutPageContext>
                 <div className="flex justify-center">
-                    <div className="max-w-homebody mt-16 flex gap-12">
+                    <div className="w-checkoutMain mt-16 flex gap-12">
                         <div className='w-[75%]'>
                             <LeftSide />
                         </div>
