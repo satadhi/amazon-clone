@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getProductById } from '../../rest-api/getProductById';
+import { useLocation, NavLink } from 'react-router-dom';
 
 function ItemDetailPage() {
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const productId = searchParams.get('product');
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+
+    // console.log(productId, "product idididid")
+    getProductById(productId)
+      .then((data) => {
+        console.log(data)
+        setData(data);
+      });
+
+
+  }, [])
   return (
-    <div className="max-w-homebody mx-auto py-10 px-4">
-      <div className="flex flex-wrap -mx-4">
+    <div className="w-checkoutMain mx-auto py-10 px-4">
+      <div className="flex gap-20">
         {/* Product Image */}
-        <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-          <div className="border border-gray-300 rounded-lg overflow-hidden">
+        <div className="w-[40%]">
+          <div className="rounded-lg  shadow-md p-4">
             <img
-              src="https://via.placeholder.com/400x400"
+              src={data.image}
               alt="Product"
-              className="w-full h-full object-cover"
+              className="h-full"
             />
           </div>
         </div>
 
         {/* Product Details */}
-        <div className="w-full md:w-1/2 px-4">
+        <div className='w-[60%]'>
           <h1 className="text-3xl font-semibold mb-4 text-gray-800">
-            Minimalist Gentle Face Wash With 6% Oat Extract & Hyaluronic Acid For Sensitive Skin
+            {data.title}
           </h1>
 
           {/* Rating and Reviews */}
@@ -47,12 +66,12 @@ function ItemDetailPage() {
 
           {/* Price */}
           <div className="text-2xl font-bold text-gray-800 mb-4">
-            Rs. 1,999
+            Rs. {data.price}
           </div>
 
           {/* Product Description */}
           <p className="text-gray-700 mb-6">
-            This gentle face wash is formulated with 6% oat extract and hyaluronic acid to soothe and hydrate sensitive skin. Sulphate-free, non-drying, and fragrance-free, it offers a gentle cleansing experience suitable for dry to normal skin types.
+            {data.description}
           </p>
 
           {/* Purchase Options */}
@@ -77,7 +96,12 @@ function ItemDetailPage() {
           {/* Add to Cart and Buy Now Buttons */}
           <div className="flex gap-4">
             <button className="flex-1 bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">
-              Add to Cart
+              <NavLink
+                to='/checkout'
+                state={{ addToBasket: data }}
+              >
+                Add to Cart
+              </NavLink>
             </button>
             <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
               Buy Now
